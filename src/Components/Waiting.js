@@ -6,40 +6,42 @@ const url =
 const SimpleForm = () => <MailchimpSubscribe url={url} />;
 
 const Waiting = () => (
-  <MailchimpSubscribe
-    url={url}
-    render={({ subscribe, status, message }) => (
-      <div>
-        <div className="contact-page-wrapper">
-          <h1 className="primary-heading">Subscribe to Our Waiting List</h1>
-        </div>
-        <div className="contact-form-container" style={{ margin: "auto" }}>
-          <SimpleForm onSubmitted={(formData) => subscribe(formData)} />
-        </div>
+  <div id="waitlist">
+    <MailchimpSubscribe
+      url={url}
+      render={({ subscribe, status, message }) => (
+        <div>
+          <div className="contact-page-wrapper">
+            <h1 className="primary-heading">Subscribe to Our Waiting List</h1>
+          </div>
+          <div className="contact-form-container" style={{ margin: "auto" }}>
+            <SimpleForm onSubmitted={(formData) => subscribe(formData)} />
+          </div>
 
-        {status === "sending" && (
-          <div className="statusMsg" style={{ color: "blue" }}>
-            sending...
-          </div>
-        )}
-        {status === "error" && (
-          <div
-            className="statusMsg"
-            style={{ color: "red" }}
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
-        )}
-        {status === "success" && (
-          <div
-            className="statusMsg"
-            style={{ color: "green", marginTop: "120px" }}
-          >
-            Subscribed !
-          </div>
-        )}
-      </div>
-    )}
-  />
+          {status === "sending" && (
+            <div className="statusMsg" style={{ color: "blue" }}>
+              sending...
+            </div>
+          )}
+          {status === "error" && (
+            <div
+              className="statusMsg"
+              style={{ color: "red" }}
+              dangerouslySetInnerHTML={{ __html: message }}
+            />
+          )}
+          {status === "success" && (
+            <div
+              className="statusMsg"
+              style={{ color: "green", marginTop: "120px" }}
+            >
+              Subscribed !
+            </div>
+          )}
+        </div>
+      )}
+    />
+  </div>
 );
 
 export default Waiting;

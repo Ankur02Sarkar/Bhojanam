@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <Navbar />
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
@@ -14,10 +14,11 @@ const Home = () => {
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
-          Healthy, Home-Style Food at Your Doorstep
+            Healthy, Home-Style Food at Your Doorstep
           </h1>
           <p className="primary-text">
-          Get the authentic taste of home-cooked meals delivered to your doorstep.
+            Get the authentic taste of home-cooked meals delivered to your
+            doorstep.
           </p>
           <button className="secondary-button">
             Order Now <FiArrowRight />{" "}
