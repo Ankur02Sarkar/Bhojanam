@@ -14,30 +14,35 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
-import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+import HourglassBottomSharpIcon from "@mui/icons-material/HourglassBottomSharp";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-
+import "./navbar.css"
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
       text: "Home",
+      link: "#home",
       icon: <HomeIcon />,
     },
     {
       text: "About",
+      link: "#about",
       icon: <InfoIcon />,
     },
     {
       text: "Testimonials",
+      link: "#testimonial",
       icon: <CommentRoundedIcon />,
     },
     {
-      text: "Contact",
-      icon: <PhoneRoundedIcon />,
+      text: "Waitlist",
+      link: "#waitlist",
+      icon: <HourglassBottomSharpIcon />,
     },
     {
       text: "Cart",
+      link: "#cart",
       icon: <ShoppingCartRoundedIcon />,
     },
   ];
@@ -52,7 +57,7 @@ const Navbar = () => {
           <a href="#about">About</a>
           <a href="#testimonial">Testimonials</a>
           <a href="#waitlist">Waitlist</a>
-          <a href="">
+          <a href="#cart">
             <BsCart2 className="navbar-cart-icon" />
           </a>
           {/* <button className="primary-button">Bookings Now</button> */}
@@ -74,10 +79,12 @@ const Navbar = () => {
             <List>
               {menuOptions.map((item) => (
                 <ListItem key={item.text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText primary={item.text} />
-                  </ListItemButton>
+                  <a href={item.link}>
+                    <ListItemButton>
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText primary={item.text} />
+                    </ListItemButton>
+                  </a>
                 </ListItem>
               ))}
             </List>

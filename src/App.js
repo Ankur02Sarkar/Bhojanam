@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Home />
       <About />
-      <Work />
+      <Work /> 
       <Testimonial />
       <Waiting />
       {/* <Contact /> */}
