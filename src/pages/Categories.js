@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Categories.css";
 import Category from "../Components/Category"
 const Categories = () => {
-  const [selectedCategory, setSelectedCategory] = useState("day");
+  const [selectedCategory, setSelectedCategory] = useState("Lunch");
 
   const handleClick = (category) => {
     setSelectedCategory(category);
@@ -10,19 +10,19 @@ const Categories = () => {
 
   const renderCategoryComponent = () => {
     switch (selectedCategory) {
-      case "day":
+      case "Lunch":
         return (
           <Category
             selectedCategory={selectedCategory}
-            name="Day"
+            name="Lunch"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         );
-      case "night":
+      case "Dinner":
         return (
           <Category
             selectedCategory={selectedCategory}
-            name="Night"
+            name="Dinner"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         );
@@ -30,7 +30,7 @@ const Categories = () => {
         return (
           <Category
             selectedCategory={selectedCategory}
-            name="Day & Night"
+            name="Lunch & Dinner"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         );
@@ -47,8 +47,8 @@ const Categories = () => {
         </div>
         <div className="">
           <div className="btnWrapper">
-            <button onClick={() => handleClick("day")}>Day</button>
-            <button onClick={() => handleClick("night")}>Night</button>
+            <button onClick={() => handleClick("Lunch")}>Lunch</button>
+            <button onClick={() => handleClick("Dinner")}>Dinner</button>
             <button onClick={() => handleClick("both")}>Both</button>
           </div>
           {renderCategoryComponent()}

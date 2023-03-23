@@ -50,7 +50,7 @@ const Navbar = () => {
     <div>
       <nav>
         <div className="nav-logo-container">
-          <img src={Logo} alt="" />
+          <img src={Logo} style={{padding: "12px 0px 0px 12px"}} />
         </div>
         <div className="navbar-links-container">
           <a href="#home">Home</a>
