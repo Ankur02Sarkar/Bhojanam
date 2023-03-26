@@ -16,7 +16,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import HourglassBottomSharpIcon from "@mui/icons-material/HourglassBottomSharp";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import "./navbar.css"
+import "./navbar.css";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
@@ -50,7 +50,7 @@ const Navbar = () => {
     <div>
       <nav>
         <div className="nav-logo-container">
-          <img src={Logo} style={{padding: "12px 0px 0px 12px"}} />
+          <img src={Logo} style={{ padding: "12px 0px 0px 12px" }} alt="" />
         </div>
         <div className="navbar-links-container">
           <a href="#home">Home</a>
