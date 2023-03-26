@@ -505,9 +505,15 @@ nav {
 }
 
 @media (max-width: 600px) {
-
   .home-bannerImage-container,
   .about-background-image-container {
     display: none;
+  }
+
+  a:visited,
+  a:link,
+  a:active {
+    display: block;
+    width: 100%;
   }
 }
