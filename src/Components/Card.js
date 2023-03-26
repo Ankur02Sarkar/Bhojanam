@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-
-const Card = ({ name, pack }) => {
+import { HiOutlineCurrencyRupee } from "react-icons/hi";
+import { BsTelephone } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
+const Card = ({ selectedCategory, name, description, pack }) => {
   const [activeSection, setActiveSection] = useState("#about");
   const [activeCard, setActiveCard] = useState(1);
   const handleButtonClick = (targetSection, cardIndex) => {
     setActiveSection(targetSection);
     setActiveCard(cardIndex);
+    console.log(" \n ");
     console.log("From Card.js Name :: ", name);
+    console.log("From Card.js selectedCategory :: ", selectedCategory);
+    console.log("From Card.js description :: ", description);
     console.log("From Card.js Pack :: ", pack);
   };
   return (
@@ -32,11 +37,7 @@ const Card = ({ name, pack }) => {
           >
             <div className="card-content">
               <div className="card-subtitle">{name}</div>
-              <p className="card-desc">
-                {name} Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Reprehenderit laboriosam vitae praesentium magnam voluptas saepe
-                quibusdam
-              </p>
+              <p className="card-desc">{description}</p>
             </div>
           </div>
 
@@ -51,33 +52,33 @@ const Card = ({ name, pack }) => {
                   <div className="card-item-title">
                     Lorem Ipsum <span>Lorem</span>
                   </div>
-                  <div className="card-item-desc">
+                  {/* <div className="card-item-desc">
                     Lorem IpsumLorem IpsumLorem Ipsum
-                  </div>
+                  </div> */}
                 </div>
                 <div className="card-item" /*data-year="2016"*/>
                   <div className="card-item-title">
                     Lorem Ipsum <span>Lorem</span>
                   </div>
-                  <div className="card-item-desc">
+                  {/* <div className="card-item-desc">
                     Lorem IpsumLorem IpsumLorem Ipsum
-                  </div>
+                  </div> */}
                 </div>
                 <div className="card-item" /*data-year="2018"*/>
                   <div className="card-item-title">
                     Lorem Ipsum <span>Lorem</span>
                   </div>
-                  <div className="card-item-desc">
+                  {/* <div className="card-item-desc">
                     Lorem IpsumLorem IpsumLorem Ipsum
-                  </div>
+                  </div> */}
                 </div>
                 <div className="card-item" /*data-year="2020"*/>
                   <div className="card-item-title">
                     Lorem Ipsum <span>Lorem</span>
                   </div>
-                  <div className="card-item-desc">
+                  {/* <div className="card-item-desc">
                     Lorem IpsumLorem IpsumLorem Ipsum
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -88,53 +89,21 @@ const Card = ({ name, pack }) => {
             id="contact"
           >
             <div className="card-content">
-              <div className="card-subtitle">Lorem</div>
+              <div className="card-subtitle">ORDER NOW</div>
               <div className="card-contact-wrapper">
                 <div className="card-contact">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  Lorem Ipsum dolor init
+                  <HiOutlineCurrencyRupee />
+                  Rs 69
                 </div>
                 <div className="card-contact">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                  </svg>
+                  <BsTelephone />
                   6969696969
                 </div>
                 <div className="card-contact">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <path d="M22 6l-10 7L2 6" />
-                  </svg>
+                  <FiMail />
                   ankur@sarkar.com
                 </div>
-                <button className="contact-me">Contact</button>
+                <button className="contact-me">BUY</button>
               </div>
             </div>
           </div>
@@ -154,7 +123,7 @@ const Card = ({ name, pack }) => {
               }`}
               onClick={() => handleButtonClick("#experience", 2)}
             >
-              Experience
+              Details
             </button>
             <button
               className={`card-nav-item ${
@@ -162,7 +131,7 @@ const Card = ({ name, pack }) => {
               }`}
               onClick={() => handleButtonClick("#contact", 3)}
             >
-              Contact
+              Order Now
             </button>
           </div>
         </div>

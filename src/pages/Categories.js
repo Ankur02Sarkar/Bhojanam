@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Categories.css";
-import Category from "../Components/Category"
+import Category from "../Components/Category";
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState("Lunch");
 
@@ -15,23 +15,30 @@ const Categories = () => {
           <Category
             selectedCategory={selectedCategory}
             name="Lunch"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            liteDesc="Small but Satisfying Meals for a Guilt Free Meal"
+            regDesc="The Perfect amount of Food to Keep you going"
+            megaDesc="The Ultimate Food Experience in one Mega Pack"
           />
         );
       case "Dinner":
         return (
           <Category
             selectedCategory={selectedCategory}
+            liteDesc="Small but Satisfying Meals for a Guilt Free Meal"
+            regDesc="The Perfect amount of Food to Keep you going"
+            megaDesc="The Ultimate Food Experience in one Mega Pack"
             name="Dinner"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         );
       case "both":
         return (
           <Category
             selectedCategory={selectedCategory}
+            liteDesc="Small but Satisfying Meals for a Guilt Free Meal"
+            regDesc="The Perfect amount of Food to Keep you going"
+            megaDesc="The Ultimate Food Experience in one Mega Pack"
+            // here selectedCategory = both NOT Lunch & Dinner
             name="Lunch & Dinner"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         );
       default:
@@ -57,7 +64,5 @@ const Categories = () => {
     </div>
   );
 };
-
-
 
 export default Categories;
